@@ -239,7 +239,11 @@ impl<'a> Executor<'a> {
 					_ => false,
 				}
 			}
-			InputMode::Insert => false,
+			InputMode::Insert => {
+				on!(backward);
+				on!(forward);
+				false
+			},
 		}
 	}
 
